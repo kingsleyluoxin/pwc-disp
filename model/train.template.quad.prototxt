@@ -423,61 +423,61 @@ layer {
 	}
 } # Relu Conv1_1
 
-layer {
-	name: "conv0_1_aa"
-	type: "Convolution"
-	bottom: "conv0_1_a"
-	bottom: "conv1_1_a"
-	top: "conv0_1_aa"
-	top: "conv1_1_aa"
-	param {
-		lr_mult: 1
-		decay_mult: 1
-	}
-	param {
-		lr_mult: 1
-		decay_mult: 0
-	}
-	convolution_param {
-		num_output: 16
-		pad: 1
-		kernel_size: 3
-		stride: 1
-		weight_filler {
-			type: "msra"
-		}
-		bias_filler {
-			type: "constant"
-		}
-		engine: CUDNN
-	}
-}
+# layer {
+#	name: "conv0_1_aa"
+#	type: "Convolution"
+#	bottom: "conv0_1_a"
+#	bottom: "conv1_1_a"
+#	top: "conv0_1_aa"
+#	top: "conv1_1_aa"
+#	param {
+#		lr_mult: 1
+#		decay_mult: 1
+#	}
+#	param {
+#		lr_mult: 1
+#		decay_mult: 0
+#	}
+#	convolution_param {
+#		num_output: 16
+#		pad: 1
+#		kernel_size: 3
+#		stride: 1
+#		weight_filler {
+#			type: "msra"
+#		}
+#		bias_filler {
+#			type: "constant"
+#		}
+#		engine: CUDNN
+#	}
+# }
 
-layer {
-	name: "Relu0_1_aa"
-	type: "ReLU"
-	bottom: "conv0_1_aa"
-	top: "conv0_1_aa"
-	relu_param {
-		negative_slope: 0.1
-	}
-}
+# layer {
+#	name: "Relu0_1_aa"
+#	type: "ReLU"
+#	bottom: "conv0_1_aa"
+#	top: "conv0_1_aa"
+#	relu_param {
+#		negative_slope: 0.1
+#	}
+# }
 
-layer {
-	name: "Relu1_1_aa"
-	type: "ReLU"
-	bottom: "conv1_1_aa"
-	top: "conv1_1_aa"
-	relu_param {
-		negative_slope: 0.1
-	}
-}
+# layer {
+#	name: "Relu1_1_aa"
+#	type: "ReLU"
+#	bottom: "conv1_1_aa"
+#	top: "conv1_1_aa"
+#	relu_param {
+#		negative_slope: 0.1
+#	}
+#}
 
 layer {
 	name: "conv0_1_b"
 	type: "Convolution"
-	bottom: "conv0_1_aa"
-	bottom: "conv1_1_aa"
+	bottom: "conv0_1_a"
+	bottom: "conv1_1_a"
 	top: "conv0_1_b"
 	top: "conv1_1_b"
 	param {
