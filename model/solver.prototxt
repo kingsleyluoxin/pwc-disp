@@ -1,6 +1,6 @@
 # use the learning rate scheme as the FlowNet2 paper
 net: "../tmp/tmp_model/train.prototxt"
-test_iter: 20000
+test_iter: 4000
 test_interval: 5500
 snapshot_prefix: "disp"
 base_lr: 1e-4
