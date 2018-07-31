@@ -2,7 +2,7 @@
 import os, sys
 import subprocess
 from math import ceil, floor
-from visual.show import show2 
+
 
 my_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(my_dir)
@@ -188,7 +188,5 @@ else:
 	subprocess.call(args)
 
 	# print('\nThe resulting disparity is stored in PWCDisp-pred-NNNNNNN.pfm')
-        res = './tmp/tmp_output/pwc-disp-pred-0000000.pfm'
-        ref = './image_data/ref_disp.pfm'
-        show2(ref, res)
+        
 
